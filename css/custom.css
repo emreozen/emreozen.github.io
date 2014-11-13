@@ -121,7 +121,7 @@ h1.bandwagon{
 }
 
 .price-slider {
-  margin-bottom: 40px;
+  margin-bottom: 45px;
 }
 
 .price-slider span {
@@ -142,7 +142,7 @@ h1.bandwagon{
   margin-bottom: 15px;
   padding: 20px;
   border: 1px solid #eeeeee;
-  min-height: 520px;
+  min-height: 530px;
   border-radius: 4px;
   /*-moz-box-shadow:    0 5px 5px 0 #ccc;
     -webkit-box-shadow: 0 5px 5px 0 #ccc;

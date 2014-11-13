@@ -1,4 +1,11 @@
 // JavaScript Document
+
+window.rider = 1000;
+window.fare = 1;
+window.share = 5;
+window.people = 2;
+
+
 var p = {
 
     0: "1K",
@@ -191,9 +198,6 @@ $(document).ready(function() {
     $("#cashTotal").val("0");
     $("#carbonTotal").val("0");
     $("#treeTotal").val("0");
-
-
-
     
 
     $("#riderSlider").slider({
@@ -241,19 +245,6 @@ $(document).ready(function() {
             }
     });
 
-    $('.month').on('click',function(event) {
-        var id = $(this).attr('id');
-
-        $('.month').removeClass('selected-month');
-        $(this).addClass('selected-month');
-        $(".month").removeClass("active-month");
-        $(this).addClass("active-month");
-
-        $('#month').val(id);
-
-        calcualtePrice()
-    });
-
     $('.term').on('click',function(event) {
         var id = $(this).attr('id');
 
@@ -275,20 +266,25 @@ $(document).ready(function() {
 function update(slider,val) {
 
     if(undefined === val) val = 0;
-    var amount = p[val];
-    var amount2 = p2[val];
-    var amount3 = p3[val];
-    console.log(val);
-    $('#sliderVal').val(val);
+     var amount = p[val];
+     var amount2 = p2[val];
+     var amount3 = p3[val];
+    //console.log("VAL: "+ $('#sliderVal').val(val));
+    //$('#sliderVal').val(val);
 
     if(slider == 1){
-        var amount = p[val];
+        amount = p[val];
+        window.rider = parseInt(t[val]);
         $('#riderSlider a').html('<label><span class="glyphicon glyphicon-chevron-left"></span> '+amount+' <span class="glyphicon glyphicon-chevron-right"></span></label>');
     }
     else if (slider == 2){
+        amount2 = p2[val];
+        window.fare = parseInt(t2[val]);
         $('#fareSlider a').html('<label><span class="glyphicon glyphicon-chevron-left"></span> '+amount2+' <span class="glyphicon glyphicon-chevron-right"></span></label>');
         }
     else if (slider == 3){
+        amount3 = p3[val];
+        window.share = parseInt(t3[val]);
         $('#shareSlider a').html('<label><span class="glyphicon glyphicon-chevron-left"></span> '+amount3+' <span class="glyphicon glyphicon-chevron-right"></span></label>');    
     }
     else
@@ -303,29 +299,23 @@ function update(slider,val) {
 
 function calcualtePrice(val){
     
-    // if(undefined === val)
-    //     val = $('#sliderVal').val();
+    window.people= parseInt($('#term').val());
 
-    // var riders = $('#riderSlider').val();
-    // var fare = $('#fareSlider').val();
-    // var share = $('#shareSlider').val();
-    // var month = $('#month').val();
-
-    var riders = document.getElementById('riderSlider').value;
-    var fare = document.getElementById('fareSlider').value; 
-    var share = document.getElementById('shareSlider').value;
-    // var month = document.getElementById('month').value;
-
-//document.getElementById('perShare').value
-
-    console.log("-"+riders+"-"+fare+"-"+share+"-"+month);
+    console.log("-"+window.rider+"-"+window.fare+"-"+window.share+"-"+window.people);
 
 
-    // var term = obj[month][$('#term').val()];
+    var cash = window.rider * window.fare * (window.share) /100 * (window.people-1);
 
-    // var totalPrice = t[val]*term;
 
-    // $("#total").val(totalPrice.toFixed(2));
-    // $("#total12").val(Math.round((totalPrice)/12).toFixed(2));
-    // $("#total52").val(Math.round((totalPrice)/52).toFixed(2));
+    $("#cashTotal").val(numberWithCommas(cash));
+    $("#carbonTotal").val(numberWithCommas(cash/5*.26));
+    $("#treeTotal").val(numberWithCommas((cash/5*.26/11).toFixed(0)));
+   // $("#total12").val(Math.round((totalPrice)/12).toFixed(2));
+    //$("#total52").val(Math.round((totalPrice)/52).toFixed(2));
+}
+
+function numberWithCommas(x) {
+
+return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+
 }
