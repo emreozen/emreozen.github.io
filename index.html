@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <!-- This file has been downloaded from Bootsnipp.com. Enjoy! -->
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="http://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/custom.css">
+
+    <script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/custom.js"></script>
+    <title class>BandWagon</title>
+</head>
+<body>
+<h1 align="center" class ="bandwagon" ><image src="images/blogo.png" >andWagon</h1>
+<div class="container">
+      <div class="price-box">
+        <div class="row">
+          <div class="col-sm-6">
+                <form class="form-horizontal form-pricing" role="form">
+                  <div class="price-slider">
+                    <h4 class="great">Total Rides</h4>
+                    <span>Rounded to the nearest 1k</span>
+                    <div class="col-sm-12">
+                      <div id="riderSlider"></div>
+                    </div>
+                  </div>
+                  <div class="price-slider">
+                    <h4 class="great">Average Fare</h4>
+                    <span>Rounded to the nearest dollar</span>
+                    <div class="col-sm-12">
+                      <div id="fareSlider"></div>
+                    </div>
+                  </div>
+                  <div class="price-slider">
+                    <h4 class="great">Percentage of Shares</h4>
+                    <span>Rounded to the nearest 5%</span>
+                    <div class="col-sm-12">
+                      <div id="shareSlider"></div>
+                    </div>
+                  </div>
+                  <div class="price-slider">
+                    <h4 class="great">Riders per share</h4>
+                    <span>Please choose one</span>
+                     
+                    <input name="sliderVal" type="hidden" id="sliderVal" value='0' readonly="readonly" />
+
+                <input name="month" type="hidden" id="month" value='24month' readonly="readonly" />
+                <input name="term" type="hidden" id="term" value='share2' readonly="readonly" />
+
+                      <div class="btn-group btn-group-justified">
+                        <div class="btn-group btn-group-sm">
+                    <button type="button" class="btn btn-primary btn-lg btn-block term active-term selected-term" id='share2'>2</button>
+                  </div>
+                        <div class="btn-group btn-group-sm">
+                          <button type="button" class="btn btn-primary btn-lg btn-block term" id='share3'>3</button>
+                  </div>
+                        <div class="btn-group btn-group-sm">
+                          <button type="button" class="btn btn-primary btn-lg btn-block term" id='share4'>4</button>
+                        </div>
+                      </div>
+                  </div>
+
+              </div>
+              <div class="col-sm-6">
+                <div class="price-form">
+
+                  <div class="form-group">
+                      <div class="row">
+                        <div class="col-sm-6">
+                          <label for="amount_amirol" class="control-label">Annually ($): </label>
+                          <span class="help-text">Amount that you save</span>
+                        </div>
+                        <div class="col-sm-6">
+                            <input type="hidden" id="amount_amirol" class="form-control">
+                            <!-- <p class="price lead" id="total"></p> -->
+                            <input class="price lead" name="cashTotal" type="text" id="cashTotal" disabled="disabled" style="" />
+                        </div>
+                    </div>
+                  </div>
+                    <div class="form-group">
+                      <div class="row">
+                        <div class="col-sm-6">
+                          <label for="amount_amirol" class="control-label">Carbon Emissions : </label>
+                          <span class="help-text">Metric Tons saved</span>
+                        </div>
+                        <div class="col-sm-6">
+                            <input type="hidden" id="amount_amirol" class="form-control">
+                            <!-- <p class="price lead" id="total12"></p> -->
+                            <input class="price lead" name="carbonTotal" type="text" id="carbonTotal" disabled="disabled" style="" />
+                        </div>
+                    </div>
+                    </div>
+                    <div class="form-group">
+                      <div class="row">
+                        <div class="col-sm-6">
+                          <label for="amount_amirol" class="control-label">Rain Forest: </label>
+                          <span class="help-text">Number of trees saved</span>
+                        </div>
+                        <div class="col-sm-6">
+                        <input type="hidden" id="amount_amirol" class="form-control">
+                            <!-- <p class="price lead" id="total52"></p> -->
+                            <input class="price lead" name="treeTotal" type="text" id="treeTotal" disabled="disabled" style="" />
+
+                        </div>
+                    </div>
+                    </div>
+                    <div style="margin-top:30px"></div>
+                    <hr class="style">
+                    <div class="form-group">
+                      <div class="col-sm-12">
+                          <img src="images/carbonred.jpg" class="img-responsive payment" />
+                      </div>
+                    </div>
+
+                  </div>
+
+                </form>
+            </div>
+            <p class="text-center" style="padding-top:10px;font-size:12px;color:#2c3e50;font-style:italic;">Created by <a href="http://www.insitefellows.org/" target="_blank">InSITE</a></p>
+        </div>
+
+          </div>
+
+      </div>
+      
+    <script src="https://code.jquery.com/ui/1.10.4/jquery-ui.min.js"></script>
+
+</body>
+</html>
