@@ -301,14 +301,14 @@ function calcualtePrice(val){
     
     window.people= parseInt($('#term').val());
 
-    console.log("-"+window.rider+"-"+window.fare+"-"+window.share+"-"+window.people);
+    // console.log("-"+window.rider+"-"+window.fare+"-"+window.share+"-"+window.people);
 
 
     var cash = window.rider * window.fare * (window.share) /100 * (window.people-1);
 
 
     $("#cashTotal").val(numberWithCommas(cash.toFixed(0)));
-    $("#carbonTotal").val(numberWithCommas((cash/5*.26).toFixed(0));
+    $("#carbonTotal").val(numberWithCommas((cash/5*.26).toFixed(0)));
     $("#treeTotal").val(numberWithCommas((cash/5*.26/11).toFixed(0)));
    // $("#total12").val(Math.round((totalPrice)/12).toFixed(2));
     //$("#total52").val(Math.round((totalPrice)/52).toFixed(2));
